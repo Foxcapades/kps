@@ -12,31 +12,31 @@ gen-all-source: \
 	kpd-gen-base-deques
 
 docs-latest:
-	# Generate the docs
+	@# Generate the docs
 	@gradle dokkaHtml
 
-	# Switch to the docs branch
+	@# Switch to the docs branch
 	@git checkout docs
 
-	# Clean out the existing "latest" dirs
+	@# Clean out the existing "latest" dirs
 	@rm -rf dokka/kpd/latest
 
-	# Make sure the dokka dir exists
+	@# Make sure the dokka dir exists
 	@mkdir -p dokka
 
-	# Move the documentation files over
+	@# Move the documentation files over
 	@mv build/docs/kpd dokka/kpd/latest
 
-	# Add new files to git.
+	@# Add new files to git.
 	@git add dokka/kpd/latest
 
-	# Commit the changes
+	@# Commit the changes
 	@git commit -m 'update latest docs'
 
-	# Push up the changes
+	@# Push up the changes
 	@git push
 
-	# Switch back to the main branch
+	@# Switch back to the main branch
 	@git checkout main
 
 

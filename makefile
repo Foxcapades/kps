@@ -11,6 +11,17 @@ main:
 gen-all-source: \
 	kpd-gen-base-deques
 
+gen-latest-docs:
+	@gradle dokkaHtml
+	@git checkout docs
+	@rm -rf dokka/latest
+	@mv build/docs/dokka dokka/latest
+	@git add dokka/latest
+	@git commit -m 'update latest docs'
+	@git push
+	@git checkout main
+
+
 rm-all-gen-source: \
 	kpd-rm-base-deques
 

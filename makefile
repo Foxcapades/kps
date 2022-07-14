@@ -11,7 +11,7 @@ main:
 gen-all-source: \
 	kpd-gen-base-deques
 
-gen-latest-docs:
+docs-latest:
 	# Generate the docs
 	@gradle dokkaHtml
 

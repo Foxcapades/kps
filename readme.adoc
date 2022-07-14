@@ -1,3 +1,7 @@
 = Kotlin Primitives
 
 == Primitive Deques
+
+=== Documentation
+
+* https://foxcapades.github.io/kps/dokka/kpd/latest/[Latest]

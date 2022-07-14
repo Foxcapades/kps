@@ -35,7 +35,7 @@ java {
 }
 
 tasks.dokkaHtml {
-  outputDirectory.set(file("$rootDir/build/docs/dokka"))
+  outputDirectory.set(file("$rootDir/build/docs/kpd"))
 }
 
 publishing {

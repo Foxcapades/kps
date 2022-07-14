@@ -8,7 +8,7 @@ plugins {
 }
 
 group = "io.foxcapades.lib.kps"
-version = "1.0.0"
+version = "1-SNAPSHOT"
 
 repositories {
   mavenCentral()

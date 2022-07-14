@@ -15,6 +15,7 @@ gen-latest-docs:
 	@gradle dokkaHtml
 	@git checkout docs
 	@rm -rf dokka/latest
+	@mkdir -p dokka
 	@mv build/docs/dokka dokka/latest
 	@git add dokka/latest
 	@git commit -m 'update latest docs'

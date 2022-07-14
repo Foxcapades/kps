@@ -42,7 +42,7 @@ publishing {
   repositories {
     maven {
       name = "GitHub"
-      url = uri("https://maven.pkg.github.com/foxcapades/pdk")
+      url = uri("https://maven.pkg.github.com/foxcapades/kps")
       credentials {
         username = project.findProperty("gpr.user") as String? ?: System.getenv("USERNAME")
         password = project.findProperty("gpr.key") as String? ?: System.getenv("TOKEN")

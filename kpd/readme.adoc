@@ -1,0 +1,17 @@
+= Primitive Deques
+:srcPath: src/main/kotlin/io/foxcapades/lib/kps/kpd
+
+Deques for Kotlin's primitives without all the boxing.
+
+* link:{srcPath}/BooleanDeque.kt[BooleanDeque]
+* link:{srcPath}/ByteDeque.kt[ByteDeque]
+* link:{srcPath}/CharDeque.kt[CharDeque]
+* link:{srcPath}/DoubleDeque.kt[DoubleDeque]
+* link:{srcPath}/FloatDeque.kt[FloatDeque]
+* link:{srcPath}/IntDeque.kt[IntDeque]
+* link:{srcPath}/LongDeque.kt[LongDeque]
+* link:{srcPath}/ShortDeque.kt[ShortDeque]
+* link:{srcPath}/UByteDeque.kt[UByteDeque]
+* link:{srcPath}/UIntDeque.kt[UIntDeque]
+* link:{srcPath}/ULongDeque.kt[ULongDeque]
+* link:{srcPath}/UShortDeque.kt[UShortDeque]

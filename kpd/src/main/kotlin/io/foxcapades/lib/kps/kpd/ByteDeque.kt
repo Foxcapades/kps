@@ -610,8 +610,8 @@ class ByteDeque : PrimitiveDeque, AbstractByteDeque<ByteDeque> {
     /**
      * Creates a new [ByteDeque] instance wrapping the given values.
      *
-     * The returned ByteDeque will have the same size and capacity as the number
-     * of values passed to this function.
+     * The returned `ByteDeque` will have the same size and capacity as the
+     * number of values passed to this function.
      *
      * @param values Values to wrap with a new [ByteDeque].
      *

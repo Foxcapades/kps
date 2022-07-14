@@ -44,4 +44,20 @@ class CharDeque : PrimitiveDeque, CharSequence, AbstractCharDeque<CharDeque> {
    * @return The contents of this deque as a `String`.
    */
   fun stringValue() = String(toArray())
+
+  companion object {
+
+    /**
+     * Creates a new [CharDeque] instance wrapping the given values.
+     *
+     * The returned `CharDeque` will have the same size and capacity as the
+     * number of values passed to this function.
+     *
+     * @param values Values to wrap with a new [CharDeque].
+     *
+     * @return A new `CharDeque` wrapping the given values.
+     */
+    @JvmStatic
+    fun of(vararg values: Char) = CharDeque(values, 0)
+  }
 }

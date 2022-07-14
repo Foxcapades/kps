@@ -1,0 +1,10 @@
+= Kotlin Primitives
+
+image:https://img.shields.io/github/license/Foxcapades/kps[]
+image:https://img.shields.io/badge/jdk-1.8-blue[]
+
+Small libraries that add functionalities around unboxed primitives in Kotlin.
+
+Libraries in this repo:
+
+* link:kpd/[KPD (Primitive Deques)]

@@ -7,8 +7,8 @@ plugins {
   signing
 }
 
-group = "io.foxcapades.lib"
-version = "1-SNAPSHOT"
+group = "io.foxcapades.lib.kps"
+version = "1.0.0"
 
 repositories {
   mavenCentral()

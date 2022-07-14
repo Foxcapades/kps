@@ -1,7 +1,31 @@
 = Primitive Deques
 :srcPath: src/main/kotlin/io/foxcapades/lib/kps/kpd
+:srcVersion: 1.0.0
+:icons: font
+ifdef::env-github[]
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+endif::[]
+
+image:https://img.shields.io/github/license/Foxcapades/kps[]
+image:https://img.shields.io/badge/jdk-1.8-blue[]
+image:https://img.shields.io/badge/docs-dokka-darkgreen[link="https://foxcapades.github.io/kps/dokka/kpd/latest/kpd/"]
 
 Deques for Kotlin's primitives without all the boxing.
+
+== Usage
+
+._build.gradle.kts_
+[source, kotlin, subs="attributes"]
+----
+  implementation("io.foxcapades.lib.kps:kpd:{srcVersion}")
+----
+
+
+=== Provided Types
 
 * link:{srcPath}/BooleanDeque.kt[BooleanDeque]
 * link:{srcPath}/ByteDeque.kt[ByteDeque]
@@ -15,3 +39,235 @@ Deques for Kotlin's primitives without all the boxing.
 * link:{srcPath}/UIntDeque.kt[UIntDeque]
 * link:{srcPath}/ULongDeque.kt[ULongDeque]
 * link:{srcPath}/UShortDeque.kt[UShortDeque]
+
+
+=== Examples
+
+==== Byte Deque
+
+.*Reading Longs from a Stream*
+--
+[source, kotlin]
+----
+val deque = ByteDeque(8192)
+val read  = deque.fillFrom(inputStream)
+
+for (i in 0 until read step 8)
+  println(deque.popLong())
+----
+
+NOTE: This is just an example, the JDK's builtin type `ByteBuffer` is able to
+read long values from a stream up to 50% faster than `ByteDeque` due to
+`ByteBuffer` utilizing the `Unsafe` class to raw cast bytes in memory as a long
+value.
+--
+
+== Documentation
+
+* https://foxcapades.github.io/kps/dokka/kpd/latest/[Latest / Snapshot]
+
+== Features
+
+=== Comparison
+
+[%header, cols="2,1m,1m,1m,1m"]
+|===
+//= Header
+|
+^| PDK
+^| C++ +
+`std::deque`
+^| Java +
+`Deque`
+^| JS +
+`Denque`
+
+//==============================================================================
+.4+| Access (peek) first element.
+.2+| front
+.4+| front()
+| peek()
+.4+| peekFront()
+
+//===========================
+//
+//
+//
+m| peekFirst()
+//
+
+//===========================
+//
+.2+| first
+//
+| getFirst()
+//
+
+//===========================
+//
+//
+//
+m| element()
+//
+
+//==============================================================================
+.2+| Access (peek) last element.
+| back
+.2+| back()
+| peekLast()
+.2+| peekBack()
+
+//===========================
+//
+//
+m| last
+//
+| getLast()
+
+//==============================================================================
+.5+| Pop (access and remove) first element.
+.2+| popFront()
+.5+|
+| poll()
+.5+| shift()
+
+//===========================
+//
+//
+//
+m| pollFirst()
+//
+
+//===========================
+//
+.3+m| popFirst()
+//
+| pop()
+//
+
+//===========================
+//
+//
+//
+m| remove()
+//
+
+//===========================
+//
+//
+//
+m| removeFirst()
+//
+
+//==============================================================================
+.2+| Pop (access and remove) last element.
+| popBack()
+.2+|
+| pollLast()
+| pop()
+
+//===========================
+//
+m| popLast()
+//
+| removeLast()
+| removeBack()
+
+//==============================================================================
+.3+| Push element onto the front of the deque.
+| pushFront(E)
+.3+| push_front(E)
+| addFirst(E)
+.3+| unshift(E)
+
+//===========================
+//
+.2+m| pushFirst(E)
+//
+| offerFirst(E)
+//
+
+//===========================
+//
+//
+//
+m| push(E)
+//
+
+//==============================================================================
+.4+| Push element onto the back of the deque.
+.2+| pushBack(E)
+.4+| push_back(E)
+| add(E)
+.4+| push(E)
+
+//===========================
+//
+//
+//
+m| addLast(E)
+//
+
+//===========================
+//
+.2+m| pushLast(E)
+//
+| offer(E)
+//
+
+//===========================
+//
+//
+//
+m| offerLast(E)
+//
+|===
+
+=== Extras
+
+==== `ByteDeque`
+
+[cols="1m,2"]
+|===
+| Method | Description
+
+| popShort(littleEndian = false)
+| Pops the first 2 bytes from the deque as a `Short` value.
+
+| popInt(littleEndian = false)
+| Pops the first 4 bytes from the deque as an `Int` value.
+
+| popLong(littleEndian = false)
+| Pops the first 8 bytes from the deque as a `Long` value.
+
+|
+|
+
+| popFloat(littleEndian = false)
+| Pops the first 4 bytes from the deque as a `Float` value
+
+| popDouble(littleEndian = false)
+| Pops the first 8 bytes from the deque as a `Double` value
+
+|
+|
+
+| popUByte()
+| Pops the first byte from the deque as a `UByte` value.
+
+| popUShort(littleEndian = false)
+| Pops the first 2 bytes from the deque as a `UShort` value.
+
+| popUInt(littleEndian = false)
+| Pops the first 4 bytes from the deque as a `UInt` value.
+
+| popULong(littleEndian = false)
+| Pops the first 8 bytes from the deque as a `ULong` value.
+
+|
+|
+
+| fillFrom(InputStream)
+| Fills the remaining space in the deque with bytes from the given
+s`InputStream`.
+|===

@@ -65,7 +65,7 @@ publishing {
       pom {
         name.set("Primitive Deques")
         description.set("Provides deque implementations for dealing with Kotlin's primitives (without the boxing).")
-        url.set("https://github.com/foxcapades/pdk")
+        url.set("https://github.com/foxcapades/kps")
 
         licenses {
           license {
@@ -83,9 +83,9 @@ publishing {
         }
 
         scm {
-          connection.set("scm:git:git://github.com/foxcapades/pdk.git")
-          developerConnection.set("scm:git:ssh://github.com/foxcapades/pdk.git")
-          url.set("https://github.com/foxcapades/pdk")
+          connection.set("scm:git:git://github.com/foxcapades/kps.git")
+          developerConnection.set("scm:git:ssh://github.com/foxcapades/kps.git")
+          url.set("https://github.com/foxcapades/kps")
         }
       }
     }

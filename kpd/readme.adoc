@@ -13,6 +13,7 @@ endif::[]
 image:https://img.shields.io/github/license/Foxcapades/kps[]
 image:https://img.shields.io/badge/jdk-1.8-blue[]
 image:https://img.shields.io/badge/docs-dokka-darkgreen[link="https://foxcapades.github.io/kps/dokka/kpd/latest/kpd/"]
+image:https://img.shields.io/maven-central/v/io.foxcapades.lib.kps/kpd[Maven Central, link="https://search.maven.org/search?q=g:io.foxcapades.lib.kps%20AND%20a:kpd"]
 
 Deques for Kotlin's primitives without all the boxing.
 

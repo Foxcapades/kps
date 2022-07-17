@@ -1127,6 +1127,250 @@ abstract class AbstractFloatDeque<D : AbstractFloatDeque<D>> {
    */
   operator fun set(index: Int, value: Float) = container.set(vei(index), value)
 
+
+
+  fun insert(index: Int, value: Float) {
+    // If the index is 0 then they are just doing a front push, no need to do
+    // anything fancy here.
+    if (index == 0) {
+      return pushFront(value)
+    }
+
+    // If the index is equal to the size, then they are just doing a back push,
+    // again, no reason to do anything fancy.
+    if (index == size) {
+      return pushBack(value)
+    }
+
+    // So they _are_ trying to insert something into the "middle" of the deque.
+
+    // Make sure we have room for the new element.
+    ensureCapacity(size + 1)
+
+    // At this point we know nothing about the internal state of the backing
+    // array.  We could be inline, out of line, stacked at the beginning of the
+    // array, sitting in the middle, stacked at the end, etc...
+    //
+    // [1, 2, 3, _]
+    // [_, 1, 2, 3]
+    // [3, _, 1, 2]
+    // [2, 3, _, 1]
+
+    // Is the given insertion index closer to the head or tail of the deque
+    if (index < (size + 1) shr 1) { // shr == quick rough half
+      // The insertion index is closer to the head of the deque, so we will be
+      // shifting the front portion "back" a position to make room for the new
+      // value.
+
+      // Figure out the new head position by rolling back by one.  Since the
+      // current head position may be at 0, this may put the head at the tail
+      // end of the backing array.
+      val newHead = decremented(realHead)
+
+      // Figure out the insertion index for the new value.  We are moving data
+      // backwards to make room for it so decrement it by one position.  (Again,
+      // this may roll it around to the back of the backing array from position
+      // `0`).
+      val insert = decremented(vei(index))
+
+      // If the insertion position is greater than or equal to the current head
+      // position, then all but possibly the first element have stayed on the
+      // same side of the backing array, meaning we can do a simple array copy
+      // to move the data backwards (except for the head which _may_ have rolled
+      // around to the tail of the backing array)
+      //
+      // Examples:
+      // (| = old head, ^ = insert position)
+      //
+      //  |
+      // [1, 2, 3, 4, 5, _]  // Before
+      // [2, 3, _, 4, 5, 1]  // After
+      //        ^
+      //     |
+      // [_, 1, 2, 3, 4, 5]  // Before
+      // [1, 2, 3, _, 4, 5]  // After
+      //           ^
+      //        |
+      // [5, _, 1, 2, 3, 4]  // Before
+      // [5, 1, 2, 3, _, 4]  // After
+      //              ^
+      //           |
+      // [4, 5, _, 1, 2, 3]  // Before
+      // [4, 5, 1, 2, 3, _]  // After
+      //                 ^
+      if (insert >= realHead) {
+
+        // Since the head may have rolled around to the tail of the backing
+        // array, we will do that copy separately.
+        container[newHead] = container[realHead]
+
+        // Now copy everything else that is moving backwards one position.
+        // 1. target = container (we're copying to the same target)
+        // 2. offset = realHead (we're copying everything after the current head
+        //             backwards 1 spot so the old head will now contain the
+        //             value that was at head + 1)
+        // 3. start  = realHead + 1 (the first value we will copy back 1, so it
+        //             will now be in the old head position)
+        // 4. end    = insert position + 1 (exclusive index of the last value
+        //             to copy, so everything from `start` to 1 before this
+        //             index will be shifted backwards by 1.
+        container.copyInto(container, realHead, realHead+1, insert+1)
+
+      }
+
+      // If the insertion position is less than the current head position, then
+      // the backing array is or will go all wonky and we need to do multiple
+      // array copies to shift everything around.
+      //
+      // Example
+      //
+      // This example deque will be used throughout the comments in the code in
+      // this block to detail the steps to get from the "Before" state to the
+      // "After" state.
+      //
+      // (| = old head, ^ = insert position)
+      //
+      //                 |
+      // [2, 3, 4, 5, _, 1]  // Before
+      // [3, _, 4, 5, 1, 2]  // After
+      //     ^
+      else {
+        // Since the head is somewhere near the tail of the backing array, that
+        // means our current empty space is in the "middle" of the backing
+        // array, before our first value, but after our last value.
+        //
+        // So we can safely shift everything from the current head position
+        // until the end of the backing array backwards by one position, leaving
+        // the last slot in the backing array empty to copy into from the head
+        // of the backing array.
+        //
+        // [2, 3, 4, 5, _, 1]  // Before
+        // [2, 3, 4, 5, 1, _]  // After
+        container.copyInto(container, realHead - 1, realHead, container.size)
+
+        // Copy the value from the head of the backing array "back" one slot to
+        // the tail of the backing array.
+        //
+        // [2, 3, 4, 5, 1, _]  // Before
+        // [_, 3, 4, 5, 1, 2]  // After
+        container[container.size - 1] = container[0]
+
+        // Now that we're situated, move the necessary data from the front of
+        // our backing array backwards one slot to fill the now empty first
+        // backing array position.
+        //
+        // When we are done, the new "empty" slot will be the position into
+        // which we will be inserting our new value.
+        //
+        // [_, 3, 4, 5, 1, 2]  // Before
+        // [3, _, 4, 5, 1, 2]  // After
+        container.copyInto(container, 0, 1, insert + 1)
+      }
+
+      // At this point, some way or another, we have moved the data around in
+      // our internal array to make room for the data we want to insert.
+
+      // Insert our new value.
+      container[insert] = value
+
+      // Update our internal head position
+      realHead = newHead
+
+    } else {
+      // The insertion position is closer to the tail of the deque, so we will
+      // be moving the data at the back of the deque forward a position to make
+      // room for the new value being inserted.
+
+      // Position of the value we will be inserting.
+      val insert = vei(index)
+
+      // New position of the last value in the deque.
+      val newTail = internalIndex(size)
+
+      // If the insertion index is before the new tail position, then we can
+      // safely move the current values in the backing array forward one slot
+      // in one array copy.
+      //
+      // Examples
+      // (| = new tail, ^ = insert position)
+      //
+      //                 |
+      // [1, 2, 3, 4, 5, _]  // Before
+      // [1, 2, 3, _, 4, 5]  // After
+      //           ^
+      //              |
+      // [2, 3, 4, 5, _, 1]  // Before
+      // [2, 3, _, 4, 5, 1]  // After
+      //        ^
+      //           |
+      // [3, 4, 5, _, 1, 2]  // Before
+      // [3, _, 4, 5, 1, 2]  // After
+      //     ^
+      //        |
+      // [4, 5, _, 1, 2, 3]  // Before
+      // [_, 4, 5, 1, 2, 3]  // After
+      //  ^
+      if (insert < newTail) {
+
+        // Move everything forward in one shot.
+        // 1. target = container (we're copying back into the same array)
+        // 2. offset = insert + 1 (our new position is 1 after our current
+        //             position, so "+ 1")
+        // 3. start  = insert (start copying from the current location where we
+        //             want to insert a value, since we have to move that slot
+        //             forward)
+        // 4. end    = newTail (exclusive end location, so we want to copy
+        //             everything from `insert` until 1 before the new tail
+        //             position forward 1 slot)
+        container.copyInto(container, insert + 1, insert, newTail)
+      }
+
+      // If the insertion index is after the new tail position, then the backing
+      // array is or will go all wonky and we have to do multiple array copies
+      // to get everything sorted out.
+      //
+      // Example
+      //
+      // The following example deque will be used in the comments in the else
+      // block below to help visualize the steps that are being taken on the
+      // backing array as they happen.
+      //
+      // (| = new tail, ^ = insert position)
+      //
+      //     |
+      // [6, _, 1, 2, 3, 4, 5]  // Before
+      // [5, 6, 1, 2, 3, _, 4]  // After
+      //                 ^
+      else {
+
+        // Move the data at the head of our backing array forward by one slot.
+        //
+        // [6, _, 1, 2, 3, 4, 5]  // Before
+        // [_, 6, 1, 2, 3, 4, 5]  // After
+        container.copyInto(container, 1, 0, newTail)
+
+        // Move the value from the end of the backing array to the front of the
+        // backing array.
+        //
+        // [_, 6, 1, 2, 3, 4, 5]  // Before
+        // [5, 6, 1, 2, 3, 4, _]  // After
+        container[0] = container[container.size - 1]
+
+        // Move the remaining elements that are after our insert position at the
+        // tail of the backing array forwards 1.
+        //
+        // [5, 6, 1, 2, 3, 4, _]  // Before
+        // [5, 6, 1, 2, 3, _, 4]  // After
+        container.copyInto(container, insert + 1, insert, container.size - 1)
+      }
+
+      // Finally, insert our value into the now available slot
+      container[insert] = value
+    }
+
+    size++
+  }
+
   // endregion Data Insertion
 
 

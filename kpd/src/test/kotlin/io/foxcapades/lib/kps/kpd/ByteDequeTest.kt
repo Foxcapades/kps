@@ -5,6 +5,8 @@ import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
+import java.io.ByteArrayInputStream
+import java.io.InputStream
 
 @DisplayName("ByteDeque")
 internal class ByteDequeTest {
@@ -72,4 +74,145 @@ internal class ByteDequeTest {
   }
 
 
+  @Nested
+  @DisplayName("fillFrom(InputStream)")
+  inner class FillFrom1 {
+
+    @Nested
+    @DisplayName("when the InputStream has already reached it's end")
+    inner class InputStreamOver {
+
+      val stream: InputStream
+        get() = ByteArrayInputStream(ByteArray(0))
+
+      @Nested
+      @DisplayName("and the deque has a capacity of 0")
+      inner class Cap0 {
+
+        @Test
+        @DisplayName("returns 0")
+        fun t1() {
+          val tgt = ByteDeque(0)
+
+          assertEquals(0, tgt.fillFrom(stream))
+        }
+      }
+
+      @Nested
+      @DisplayName("and the deque has 0 space available")
+      inner class Space0 {
+
+        @Test
+        @DisplayName("returns 0")
+        fun t1() {
+          val tgt = ByteDeque.of(1, 2, 3)
+
+          assertEquals(0, tgt.fillFrom(stream))
+        }
+      }
+
+      @Nested
+      @DisplayName("and the deque has some space available")
+      inner class SomeSpace {
+
+        @Test
+        @DisplayName("returns -1")
+        fun t1() {
+          val tgt = ByteDeque(10)
+
+          assertEquals(-1, tgt.fillFrom(stream))
+        }
+      }
+    }
+
+    @Nested
+    @DisplayName("when the InputStream has some number of bytes")
+    inner class InputStreamBytes {
+
+      val streamValue = "Goodbye cruel world!"
+
+      val stream: InputStream
+        get() = ByteArrayInputStream(streamValue.toByteArray())
+
+      val streamSize = 20
+
+      @Nested
+      @DisplayName("and the deque has a capacity of 0")
+      inner class Cap0 {
+
+        @Test
+        @DisplayName("returns 0")
+        fun t1() {
+          val tgt = ByteDeque(0)
+
+          assertEquals(0, tgt.fillFrom(stream))
+        }
+
+        @Test
+        @DisplayName("reads no bytes from the input stream")
+        fun t2() {
+          val tgt = ByteDeque(0)
+
+          tgt.fillFrom(stream)
+
+          assertEquals("Goodbye cruel world!", stream.readBytes().decodeToString())
+        }
+      }
+
+      @Nested
+      @DisplayName("and the deque has 0 space available")
+      inner class Space0 {
+
+        @Test
+        @DisplayName("returns 0")
+        fun t1() {
+          val tgt = ByteDeque.of(1, 2, 3)
+
+          assertEquals(0, tgt.fillFrom(stream))
+        }
+
+        @Test
+        @DisplayName("reads no bytes from the input stream")
+        fun t2() {
+          val tgt = ByteDeque.of(1, 2, 3)
+
+          tgt.fillFrom(stream)
+
+          assertEquals("Goodbye cruel world!", stream.readBytes().decodeToString())
+        }
+      }
+
+      @Nested
+      @DisplayName("and the deque is empty")
+      inner class Empty {
+
+        @Nested
+        @DisplayName("with exactly the required amount of space for the stream contents")
+        inner class Exact {
+
+          @Test
+          @DisplayName("reads the correct number of bytes from the stream")
+          fun t1() {
+            val tgt = ByteDeque(streamSize)
+
+            assertEquals(streamSize, tgt.fillFrom(stream))
+            assertEquals(streamSize, tgt.size)
+          }
+
+          @Test
+          @DisplayName("contains the expected values after read")
+          fun t2() {
+            val tgt = ByteDeque(streamSize)
+
+            tgt.fillFrom(stream)
+            assertEquals(streamValue, tgt.toArray().decodeToString())
+          }
+        }
+
+        @Nested
+        @DisplayName("with less than the required amount of space for the stream contents")
+        inner class LessThan
+      }
+    }
+  }
 }

@@ -488,6 +488,10 @@ class ByteDeque : PrimitiveDeque, AbstractByteDeque<ByteDeque> {
    * before this method was called.
    */
   fun fillFrom(stream: InputStream): Int {
+    // If we don't have any space available, then bail here
+    if (space == 0)
+      return 0
+
     // If the current size of the deque is `0` then use the full data array
     // regardless of where the head was previously.
     if (size == 0) {
@@ -502,10 +506,6 @@ class ByteDeque : PrimitiveDeque, AbstractByteDeque<ByteDeque> {
       size = red
       return red
     }
-
-    // If we don't have any space available, then bail here
-    if (space == 0)
-      return 0
 
     // If we only have room for one more byte
     if (space == 1) {

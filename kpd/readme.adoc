@@ -324,8 +324,29 @@ m| removeLast(n=1)
 
 | fillFrom(InputStream)
 | Fills the remaining space in the deque with bytes from the given
-s`InputStream`.
+`InputStream`.
 |===
+
+
+==== `CharDeque`
+
+In addition to the following method extras, `CharDeque` also implements the
+interface `CharSequence`.
+
+[cols="1m,2"]
+|===
+| Method / Property | Description
+
+| length | Alias for `size`. +
+From `CharSequence`.
+
+| subSequence(start, end) | Alias for `slice(start, end)` +
+From `CharSequence`.
+
+| stringValue() | Returns the current contents of the `CharDeque` as a `String`.
+
+|===
+
 
 ==== `UByteDeque`
 
@@ -368,5 +389,5 @@ s`InputStream`.
 
 | fillFrom(InputStream)
 | Fills the remaining space in the deque with bytes from the given
-s`InputStream`.
+`InputStream`.
 |===

@@ -23,6 +23,7 @@ $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractBooleanDeque/frontOr/#kot
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractBooleanDeque/frontOrNull/#/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-boolean-deque/front-or-null.html
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractBooleanDeque/get/#kotlin.Int/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-boolean-deque/get.html
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractBooleanDeque/hashCode/#/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-boolean-deque/hash-code.html
+$dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractBooleanDeque/insert/#kotlin.Int#kotlin.Boolean/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-boolean-deque/insert.html
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractBooleanDeque/isEmpty/#/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-boolean-deque/is-empty.html
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractBooleanDeque/iterator/#/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-boolean-deque/iterator.html
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractBooleanDeque/last/#/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-boolean-deque/last.html
@@ -85,6 +86,7 @@ $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractByteDeque/frontOr/#kotlin
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractByteDeque/frontOrNull/#/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-byte-deque/front-or-null.html
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractByteDeque/get/#kotlin.Int/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-byte-deque/get.html
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractByteDeque/hashCode/#/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-byte-deque/hash-code.html
+$dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractByteDeque/insert/#kotlin.Int#kotlin.Byte/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-byte-deque/insert.html
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractByteDeque/isEmpty/#/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-byte-deque/is-empty.html
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractByteDeque/iterator/#/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-byte-deque/iterator.html
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractByteDeque/last/#/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-byte-deque/last.html
@@ -147,6 +149,7 @@ $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractCharDeque/frontOr/#kotlin
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractCharDeque/frontOrNull/#/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-char-deque/front-or-null.html
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractCharDeque/get/#kotlin.Int/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-char-deque/get.html
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractCharDeque/hashCode/#/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-char-deque/hash-code.html
+$dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractCharDeque/insert/#kotlin.Int#kotlin.Char/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-char-deque/insert.html
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractCharDeque/isEmpty/#/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-char-deque/is-empty.html
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractCharDeque/iterator/#/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-char-deque/iterator.html
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractCharDeque/last/#/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-char-deque/last.html
@@ -209,6 +212,7 @@ $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractDoubleDeque/frontOr/#kotl
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractDoubleDeque/frontOrNull/#/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-double-deque/front-or-null.html
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractDoubleDeque/get/#kotlin.Int/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-double-deque/get.html
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractDoubleDeque/hashCode/#/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-double-deque/hash-code.html
+$dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractDoubleDeque/insert/#kotlin.Int#kotlin.Double/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-double-deque/insert.html
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractDoubleDeque/isEmpty/#/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-double-deque/is-empty.html
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractDoubleDeque/iterator/#/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-double-deque/iterator.html
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractDoubleDeque/last/#/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-double-deque/last.html
@@ -271,6 +275,7 @@ $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractFloatDeque/frontOr/#kotli
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractFloatDeque/frontOrNull/#/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-float-deque/front-or-null.html
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractFloatDeque/get/#kotlin.Int/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-float-deque/get.html
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractFloatDeque/hashCode/#/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-float-deque/hash-code.html
+$dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractFloatDeque/insert/#kotlin.Int#kotlin.Float/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-float-deque/insert.html
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractFloatDeque/isEmpty/#/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-float-deque/is-empty.html
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractFloatDeque/iterator/#/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-float-deque/iterator.html
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractFloatDeque/last/#/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-float-deque/last.html
@@ -333,6 +338,7 @@ $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractIntDeque/frontOr/#kotlin.
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractIntDeque/frontOrNull/#/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-int-deque/front-or-null.html
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractIntDeque/get/#kotlin.Int/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-int-deque/get.html
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractIntDeque/hashCode/#/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-int-deque/hash-code.html
+$dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractIntDeque/insert/#kotlin.Int#kotlin.Int/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-int-deque/insert.html
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractIntDeque/isEmpty/#/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-int-deque/is-empty.html
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractIntDeque/iterator/#/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-int-deque/iterator.html
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractIntDeque/last/#/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-int-deque/last.html
@@ -395,6 +401,7 @@ $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractLongDeque/frontOr/#kotlin
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractLongDeque/frontOrNull/#/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-long-deque/front-or-null.html
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractLongDeque/get/#kotlin.Int/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-long-deque/get.html
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractLongDeque/hashCode/#/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-long-deque/hash-code.html
+$dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractLongDeque/insert/#kotlin.Int#kotlin.Long/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-long-deque/insert.html
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractLongDeque/isEmpty/#/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-long-deque/is-empty.html
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractLongDeque/iterator/#/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-long-deque/iterator.html
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractLongDeque/last/#/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-long-deque/last.html
@@ -457,6 +464,7 @@ $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractShortDeque/frontOr/#kotli
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractShortDeque/frontOrNull/#/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-short-deque/front-or-null.html
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractShortDeque/get/#kotlin.Int/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-short-deque/get.html
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractShortDeque/hashCode/#/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-short-deque/hash-code.html
+$dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractShortDeque/insert/#kotlin.Int#kotlin.Short/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-short-deque/insert.html
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractShortDeque/isEmpty/#/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-short-deque/is-empty.html
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractShortDeque/iterator/#/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-short-deque/iterator.html
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractShortDeque/last/#/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-short-deque/last.html
@@ -519,6 +527,7 @@ $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractUByteDeque/frontOr/#kotli
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractUByteDeque/frontOrNull/#/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-u-byte-deque/front-or-null.html
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractUByteDeque/get/#kotlin.Int/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-u-byte-deque/get.html
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractUByteDeque/hashCode/#/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-u-byte-deque/hash-code.html
+$dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractUByteDeque/insert/#kotlin.Int#kotlin.UByte/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-u-byte-deque/insert.html
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractUByteDeque/isEmpty/#/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-u-byte-deque/is-empty.html
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractUByteDeque/iterator/#/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-u-byte-deque/iterator.html
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractUByteDeque/last/#/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-u-byte-deque/last.html
@@ -581,6 +590,7 @@ $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractUIntDeque/frontOr/#kotlin
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractUIntDeque/frontOrNull/#/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-u-int-deque/front-or-null.html
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractUIntDeque/get/#kotlin.Int/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-u-int-deque/get.html
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractUIntDeque/hashCode/#/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-u-int-deque/hash-code.html
+$dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractUIntDeque/insert/#kotlin.Int#kotlin.UInt/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-u-int-deque/insert.html
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractUIntDeque/isEmpty/#/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-u-int-deque/is-empty.html
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractUIntDeque/iterator/#/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-u-int-deque/iterator.html
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractUIntDeque/last/#/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-u-int-deque/last.html
@@ -643,6 +653,7 @@ $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractULongDeque/frontOr/#kotli
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractULongDeque/frontOrNull/#/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-u-long-deque/front-or-null.html
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractULongDeque/get/#kotlin.Int/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-u-long-deque/get.html
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractULongDeque/hashCode/#/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-u-long-deque/hash-code.html
+$dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractULongDeque/insert/#kotlin.Int#kotlin.ULong/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-u-long-deque/insert.html
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractULongDeque/isEmpty/#/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-u-long-deque/is-empty.html
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractULongDeque/iterator/#/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-u-long-deque/iterator.html
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractULongDeque/last/#/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-u-long-deque/last.html
@@ -705,6 +716,7 @@ $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractUShortDeque/frontOr/#kotl
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractUShortDeque/frontOrNull/#/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-u-short-deque/front-or-null.html
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractUShortDeque/get/#kotlin.Int/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-u-short-deque/get.html
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractUShortDeque/hashCode/#/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-u-short-deque/hash-code.html
+$dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractUShortDeque/insert/#kotlin.Int#kotlin.UShort/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-u-short-deque/insert.html
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractUShortDeque/isEmpty/#/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-u-short-deque/is-empty.html
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractUShortDeque/iterator/#/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-u-short-deque/iterator.html
 $dokka.location:io.foxcapades.lib.kps.kpd.base/AbstractUShortDeque/last/#/PointingToDeclaration/kpd/io.foxcapades.lib.kps.kpd.base/-abstract-u-short-deque/last.html

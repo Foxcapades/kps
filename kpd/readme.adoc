@@ -263,7 +263,7 @@ m| removeLast(n=1)
 | Contents to array.
 | toArray()
 |
-| toArray() ⚠
+| toArray()
 | toArray()
 
 //==============================================================================

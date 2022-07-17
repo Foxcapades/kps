@@ -326,3 +326,47 @@ m| removeLast(n=1)
 | Fills the remaining space in the deque with bytes from the given
 s`InputStream`.
 |===
+
+==== `UByteDeque`
+
+[cols="1m,2"]
+|===
+| Method | Description
+
+| popByte()
+| Pops the first ubyte from the deque as a `Byte` value.
+
+| popShort(littleEndian = false)
+| Pops the first 2 ubytes from the deque as a `Short` value.
+
+| popInt(littleEndian = false)
+| Pops the first 4 ubytes from the deque as an `Int` value.
+
+| popLong(littleEndian = false)
+| Pops the first 8 ubytes from the deque as a `Long` value.
+
+2+a| '''
+
+| popFloat(littleEndian = false)
+| Pops the first 4 ubytes from the deque as a `Float` value
+
+| popDouble(littleEndian = false)
+| Pops the first 8 ubytes from the deque as a `Double` value
+
+2+a| '''
+
+| popUShort(littleEndian = false)
+| Pops the first 2 ubytes from the deque as a `UShort` value.
+
+| popUInt(littleEndian = false)
+| Pops the first 4 ubytes from the deque as a `UInt` value.
+
+| popULong(littleEndian = false)
+| Pops the first 8 ubytes from the deque as a `ULong` value.
+
+2+a| '''
+
+| fillFrom(InputStream)
+| Fills the remaining space in the deque with bytes from the given
+s`InputStream`.
+|===

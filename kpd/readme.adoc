@@ -71,7 +71,7 @@ value.
 
 === Comparison
 
-[%header, cols="2,1m,1m,1m,1m"]
+[%header, cols="2,1m,1m,1m,1m,1m"]
 |===
 //= Header
 |
@@ -80,6 +80,8 @@ value.
 `std::deque`
 ^| Java +
 `Deque`
+^| Kotlin +
+`ArrayDeque`
 ^| JS +
 `Denque`
 
@@ -88,90 +90,103 @@ value.
 .2+| front
 .4+| front()
 | peek()
+.4+| first()
 .4+| peekFront()
 
 //===========================
-//
-//
-//
+// Desc
+// PDK
+// C++
 m| peekFirst()
-//
+// Kotlin
+// Denque
 
 //===========================
-//
+// Desc
 .2+| first
-//
+// C++
 | getFirst()
-//
+// Kotlin
+// Denque
 
 //===========================
-//
-//
-//
+// Desc
+// PDK
+// C++
 m| element()
-//
+// Kotlin
+// Denque
 
 //==============================================================================
 .2+| Access (peek) last element.
 | back
 .2+| back()
 | peekLast()
+.2+| last()
 .2+| peekBack()
 
 //===========================
-//
-//
+// Desc
 m| last
-//
+// C++
 | getLast()
+// Kotlin
+// Denque
 
 //==============================================================================
 .5+| Pop (access and remove) first element.
 .2+| popFront()
 .5+|
 | poll()
+.5+| removeFirst()
 .5+| shift()
 
 //===========================
-//
-//
-//
+// Desc
+// PDK
+// C++
 m| pollFirst()
-//
+// Kotlin
+// Denque
 
 //===========================
-//
+// Desc
 .3+m| popFirst()
-//
+// C++
 | pop()
-//
+// Kotlin
+// Denque
 
 //===========================
-//
-//
-//
+// Desc
+// PDK
+// C++
 m| remove()
-//
+// Kotlin
+// Denque
 
 //===========================
-//
-//
-//
+// Desc
+// PDK
+// C++
 m| removeFirst()
-//
+// Kotlin
+// Denque
 
 //==============================================================================
 .2+| Pop (access and remove) last element.
 | popBack()
 .2+|
 | pollLast()
+.2+| removeLast()
 | pop()
 
 //===========================
-//
+// Desc
 m| popLast()
-//
+// C++
 | removeLast()
+// Kotlin
 | removeBack()
 
 //==============================================================================
@@ -179,49 +194,56 @@ m| popLast()
 | pushFront(E)
 .3+| push_front(E)
 | addFirst(E)
+.3+| addFirst(E)
 .3+| unshift(E)
 
 //===========================
-//
+// Desc
 .2+m| pushFirst(E)
-//
+// C++
 | offerFirst(E)
-//
+// Kotlin
+// Denque
 
 //===========================
-//
-//
-//
+// Desc
+// PDK
+// C++
 m| push(E)
-//
+// Kotlin
+// Denque
 
 //==============================================================================
 .4+| Push element onto the back of the deque.
 | pushBack(E)
 .4+| push_back(E)
 | add(E)
+.4+| addLast(E)
 .4+| push(E)
 
 //===========================
-//
+// Desc
 m| pushLast(E)
-//
+// C++
 m| addLast(E)
-//
+// Kotlin
+// Denque
 
 //===========================
-//
+// Desc
 .2+m| += E
-//
+// C++
 | offer(E)
-//
+// Kotlin
+// Denque
 
 //===========================
-//
-//
-//
+// Desc
+// PDK
+// C++
 m| offerLast(E)
-//
+// Kotlin
+// Denque
 
 //==============================================================================
 .2+| Delete first element.
@@ -229,13 +251,15 @@ m| offerLast(E)
 .2+| pop_front()
 .2+|
 .2+|
+.2+|
 
 //===========================
-//
+// Desc
 m| removeFirst(n=1)
-//
-//
-//
+// C++
+// Java
+// Kotlin
+// Denque
 
 //==============================================================================
 .2+| Delete last element.
@@ -243,19 +267,22 @@ m| removeFirst(n=1)
 .2+| pop_back()
 .2+|
 .2+|
+.2+|
 
 //===========================
-//
+// Desc
 m| removeLast(n=1)
-//
-//
-//
+// C++
+// Java
+// Kotlin
+// Denque
 
 //==============================================================================
 | Indexed element access.
 | [i]
 | [i]
 |
+| [i]
 | peekAt(i)
 
 
@@ -265,6 +292,7 @@ m| removeLast(n=1)
 |
 | toArray()
 | toArray()
+| toArray()
 
 //==============================================================================
 | Trim container to content size.
@@ -272,9 +300,12 @@ m| removeLast(n=1)
 | shrink_to_fit()
 |
 |
+|
 
 //==============================================================================
 | Clear contents.
+| clear()
+| clear()
 | clear()
 | clear()
 | clear()

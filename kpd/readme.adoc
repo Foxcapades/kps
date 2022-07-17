@@ -277,8 +277,7 @@ m| removeLast(n=1)
 | popLong(littleEndian = false)
 | Pops the first 8 bytes from the deque as a `Long` value.
 
-|
-|
+2+a| '''
 
 | popFloat(littleEndian = false)
 | Pops the first 4 bytes from the deque as a `Float` value
@@ -286,8 +285,7 @@ m| removeLast(n=1)
 | popDouble(littleEndian = false)
 | Pops the first 8 bytes from the deque as a `Double` value
 
-|
-|
+2+a| '''
 
 | popUByte()
 | Pops the first byte from the deque as a `UByte` value.
@@ -301,8 +299,7 @@ m| removeLast(n=1)
 | popULong(littleEndian = false)
 | Pops the first 8 bytes from the deque as a `ULong` value.
 
-|
-|
+2+a| '''
 
 | fillFrom(InputStream)
 | Fills the remaining space in the deque with bytes from the given

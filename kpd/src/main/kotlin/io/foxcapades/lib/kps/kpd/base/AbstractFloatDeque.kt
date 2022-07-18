@@ -189,7 +189,7 @@ abstract class AbstractFloatDeque<D : AbstractFloatDeque<D>> {
    */
   fun clear() {
     realHead = 0
-    size     = 0
+    size = 0
   }
 
   /**
@@ -462,7 +462,7 @@ abstract class AbstractFloatDeque<D : AbstractFloatDeque<D>> {
     if (start !in 0 until size || start > end || end > size)
       throw IndexOutOfBoundsException()
 
-    val realSize  = end - start
+    val realSize = end - start
 
     // Shortcuts
     when (realSize) {
@@ -472,7 +472,7 @@ abstract class AbstractFloatDeque<D : AbstractFloatDeque<D>> {
     }
 
     val realStart = internalIndex(start)
-    val realEnd   = internalIndex(end)
+    val realEnd = internalIndex(end)
 
     val out = FloatArray(realSize)
 
@@ -614,11 +614,12 @@ abstract class AbstractFloatDeque<D : AbstractFloatDeque<D>> {
    *
    * @throws NoSuchElementException If this deque is empty.
    */
-  val front get() =
-    if (size == 0)
-      throw NoSuchElementException()
-    else
-      container[realHead]
+  val front
+    get() =
+      if (size == 0)
+        throw NoSuchElementException()
+      else
+        container[realHead]
 
   /**
    * Inline alias of [front].
@@ -668,11 +669,12 @@ abstract class AbstractFloatDeque<D : AbstractFloatDeque<D>> {
    *
    * @throws NoSuchElementException If this deque is empty.
    */
-  val back get() =
-    if (size == 0)
-      throw NoSuchElementException()
-    else
-      container[internalIndex(lastIndex)]
+  val back
+    get() =
+      if (size == 0)
+        throw NoSuchElementException()
+      else
+        container[internalIndex(lastIndex)]
 
   /**
    * Inline alias of [back]
@@ -772,11 +774,11 @@ abstract class AbstractFloatDeque<D : AbstractFloatDeque<D>> {
   fun iterator() = object : ListIterator<Float> {
     var position = -1
 
-    override fun hasNext()       = position < lastIndex
-    override fun hasPrevious()   = position > 0
-    override fun next()          = get(++position)
-    override fun nextIndex()     = position + 1
-    override fun previous()      = get(--position)
+    override fun hasNext() = position < lastIndex
+    override fun hasPrevious() = position > 0
+    override fun next() = get(++position)
+    override fun nextIndex() = position + 1
+    override fun previous() = get(--position)
     override fun previousIndex() = position - 1
   }
 
@@ -854,7 +856,7 @@ abstract class AbstractFloatDeque<D : AbstractFloatDeque<D>> {
 
       // Make sure our head position is zero (it should have been anyway but
       // better safe than sorry)
-      realHead  = 0
+      realHead = 0
 
       // Set our deque's size to the size of the input array.
       size = values.size
@@ -867,7 +869,7 @@ abstract class AbstractFloatDeque<D : AbstractFloatDeque<D>> {
     ensureCapacity(size + values.size)
 
     // Calculate the current insert offset position
-    val offset  = internalIndex(size)
+    val offset = internalIndex(size)
 
     // Figure out what the new last index will be
     val newTail = internalIndex(size + (values.size - 1))
@@ -929,7 +931,7 @@ abstract class AbstractFloatDeque<D : AbstractFloatDeque<D>> {
   fun pushBack(values: Collection<Float>) {
     // If the given collection is empty
     if (values.isEmpty())
-      // then there's nothing to do
+    // then there's nothing to do
       return
 
     // Make sure we have room for all the new goodies
@@ -951,7 +953,7 @@ abstract class AbstractFloatDeque<D : AbstractFloatDeque<D>> {
   fun pushBack(values: AbstractFloatDeque<*>) {
     // If the input deque is empty
     if (values.isEmpty())
-      // what do they expect us to do?
+    // what do they expect us to do?
       return
 
     // If the backing array is empty, or our deque is empty:
@@ -1232,7 +1234,7 @@ abstract class AbstractFloatDeque<D : AbstractFloatDeque<D>> {
         // 4. end    = insert position + 1 (exclusive index of the last value
         //             to copy, so everything from `start` to 1 before this
         //             index will be shifted backwards by 1.
-        container.copyInto(container, realHead, realHead+1, insert+1)
+        container.copyInto(container, realHead, realHead + 1, insert + 1)
 
       }
 
@@ -1418,6 +1420,30 @@ abstract class AbstractFloatDeque<D : AbstractFloatDeque<D>> {
    * Inline alias of [popFront]
    */
   inline fun popFirst() = popFront()
+
+  /**
+   * Removes the first element from this deque and returns it, if this deque
+   * has a first element, else returns `null`.
+   *
+   * @return Either the former first element of this deque, or `null` if this
+   * deque was empty.
+   */
+  fun popFrontOrNull(): Float? {
+    if (size == 0)
+      return null
+
+    val c = container[realHead]
+
+    realHead = incremented(realHead)
+    size--
+
+    return c
+  }
+
+  /**
+   * Inline alias of [popFrontOrNull]
+   */
+  inline fun popFirstOrNull() = if (size == 0) null else popFront()
 
   /**
    * Removes the first [n] elements of this deque.

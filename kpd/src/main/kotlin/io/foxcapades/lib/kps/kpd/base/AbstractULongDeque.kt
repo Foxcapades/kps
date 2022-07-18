@@ -1129,6 +1129,24 @@ abstract class AbstractULongDeque<D : AbstractULongDeque<D>> {
 
 
 
+  /**
+   * Inserts the given value into this deque at the specified index.
+   *
+   * **Example**:
+   * ```
+   * val deq = Deque.of(1, 2, 3, 4)  // Deque{1, 2, 3, 4}
+   * deq.insert(2, 9)                // Deque{1, 2, 9, 3, 4}
+   * ```
+   *
+   * @param index Index at which the value should be inserted.
+   *
+   * Must be a value between zero and [size] (inclusive).
+   *
+   * @param value Value to insert.
+   *
+   * @throws IndexOutOfBoundsException If the given index is less than zero or
+   * is greater than [size].
+   */
   fun insert(index: Int, value: ULong) {
     // If the index is 0 then they are just doing a front push, no need to do
     // anything fancy here.

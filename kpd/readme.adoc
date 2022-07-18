@@ -344,7 +344,8 @@ the deque did not previously have a capacity of at least the given value, it
 will be resized.
 
 | copyInto(buf, off=0, len=size)
-| Copies the contents of the deque into the given buffer array.
+| Copies the contents of the deque into the given buffer array. +
+This method does not modify the deque state.
 
 | slice(start, end)
 .2+| Creates a new deque with the selected subset of this deque's elements.

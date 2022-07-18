@@ -329,7 +329,7 @@ following additional functionality is provided.
 
 The following methods and properties are present on all KPD types.
 
-[cols="1m,2"]
+[cols="2m,3"]
 |===
 | Method | Description
 

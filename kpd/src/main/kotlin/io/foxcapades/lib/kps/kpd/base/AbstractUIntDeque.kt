@@ -1547,6 +1547,27 @@ abstract class AbstractUIntDeque<D : AbstractUIntDeque<D>> {
    */
   inline fun popLast() = popBack()
 
+  /**
+   * Removes the last element from this deque and returns it, if this deque has
+   * a last element, else returns `null`.
+   *
+   * @return Either the former last element of this deque, or `null` if this
+   * deque was empty.
+   */
+  fun popBackOrNull(): UInt? {
+    if (size == 0)
+      return null
+
+    val c = container[internalIndex(lastIndex)]
+    size--
+    return c
+  }
+
+  /**
+   * Inline alias of [popBackOrNull]
+   */
+  inline fun popLastOrNull() = popBackOrNull()
+
   // endregion Data Removal
 
 

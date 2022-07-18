@@ -1589,6 +1589,20 @@ abstract class AbstractByteDeque<D : AbstractByteDeque<D>> {
    */
   inline fun popLastOr(value: Byte) = popBackOr(value)
 
+  fun remove(index: Int) {
+    if (index == 0)
+      return removeFront(1)
+
+    if (index == size - 1)
+      return removeBack(1)
+
+    // If we are closer to the head than the tail of the deque
+    if (index < (size + 1) shr 1) {
+
+      val
+    }
+  }
+
   // endregion Data Removal
 
 

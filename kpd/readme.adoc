@@ -322,6 +322,68 @@ m| removeLast(n=1)
 
 === Extras
 
+In addition to the methods and properties listed in the comparison above, the
+following additional functionality is provided.
+
+==== `*Deque`
+
+The following methods and properties are present on all KPD types.
+
+[cols="1m,2"]
+|===
+| Method | Description
+
+| copy()
+| Copies or clones the deque returning a new deque instance that is identical
+to the original. +
+The data in the deque is also copied.
+
+| ensureCapacity(cap)
+| Ensures the deque instance has at a capacity of at least the given value.  If
+the deque did not previously have a capacity of at least the given value, it
+will be resized.
+
+| copyInto(buf, off=0, len=size)
+| Copies the contents of the deque into the given buffer array.
+
+| slice(start, end)
+.2+| Creates a new deque with the selected subset of this deque's elements.
+| slice(range)
+
+| sliceToArray(start, end)
+.2+| Creates a new array with the selected subset of this deque's elements.
+| sliceToArray(range)
+
+| + rhs
+.2+| Creates a new deque that is the concatenation of the two source deques.
+| plus(rhs)
+
+| toList()
+| Returns a list containing the current contents of the source deque.
+
+| frontOrNull()
+.2+| Returns the first element in the deque or `null` if the deque is empty.
+| firstOrNull()
+
+| backOrNull()
+.2+| Returns the last element in the deque or `null` if the deque is empty.
+| lastOrNull()
+
+| frontOr(E)
+.2+| Returns the first element in the deque or the given default value if the
+deque is empty.
+| firstOr(E)
+
+| backOr(E)
+.2+| Returns the last element in the deque or the given default value if the
+deque is empty.
+| lastOr(E)
+
+| iterator()
+| Returns a boxed iterator over the elements in the source deque.
+
+|===
+
 ==== `ByteDeque`
 
 [cols="1m,2"]

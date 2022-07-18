@@ -1,6 +1,6 @@
 = Primitive Deques
 :srcPath: src/main/kotlin/io/foxcapades/lib/kps/kpd
-:srcVersion: 1.0.0
+:srcVersion: 1.1.0
 :icons: font
 ifdef::env-github[]
 :tip-caption: :bulb:

@@ -1568,6 +1568,27 @@ abstract class AbstractCharDeque<D : AbstractCharDeque<D>> {
    */
   inline fun popLastOrNull() = popBackOrNull()
 
+  /**
+   * Removes the last element from this deque and returns in, if this deque has
+   * a last element, else returns the given default value.
+   *
+   * @return Either the former last element of the deque, or [value] if this
+   * deque was empty.
+   */
+  fun popBackOr(value: Char): Char {
+    if (size == 0)
+      return value
+
+    val c = container[internalIndex(lastIndex)]
+    size--
+    return c
+  }
+
+  /**
+   * Inline alias of [popBackOr]
+   */
+  inline fun popLastOr(value: Char) = popBackOr(value)
+
   // endregion Data Removal
 
 

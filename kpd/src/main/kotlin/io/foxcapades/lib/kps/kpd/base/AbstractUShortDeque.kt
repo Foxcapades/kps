@@ -1589,6 +1589,14 @@ abstract class AbstractUShortDeque<D : AbstractUShortDeque<D>> {
    */
   inline fun popLastOr(value: UShort) = popBackOr(value)
 
+  /**
+   * Removes the value at the given index from this deque.
+   *
+   * @param index Index of the element to remove.
+   *
+   * @throws IndexOutOfBoundsException If the given index is less than zero or
+   * is greater than [lastIndex].
+   */
   fun remove(index: Int) {
     if (index == 0)
       return removeFront(1)

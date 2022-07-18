@@ -5,4 +5,5 @@
 === Documentation
 
 * https://foxcapades.github.io/kps/dokka/kpd/latest/[Latest / Snapshot]
+* https://foxcapades.github.io/kps/dokka/kpd/1.1.0/[1.1.0]
 * https://foxcapades.github.io/kps/dokka/kpd/1.0.0/[1.0.0]

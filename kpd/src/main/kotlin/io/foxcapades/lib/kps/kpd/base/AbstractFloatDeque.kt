@@ -1422,8 +1422,8 @@ abstract class AbstractFloatDeque<D : AbstractFloatDeque<D>> {
   inline fun popFirst() = popFront()
 
   /**
-   * Removes the first element from this deque and returns it, if this deque
-   * has a first element, else returns `null`.
+   * Removes the first element from this deque and returns it, if this deque has
+   * a first element, else returns `null`.
    *
    * @return Either the former first element of this deque, or `null` if this
    * deque was empty.
@@ -1444,6 +1444,30 @@ abstract class AbstractFloatDeque<D : AbstractFloatDeque<D>> {
    * Inline alias of [popFrontOrNull]
    */
   inline fun popFirstOrNull() = if (size == 0) null else popFront()
+
+  /**
+   * Removes the first element from this deque and returns in, if this deque has
+   * a first element, else returns the given default value.
+   *
+   * @return Either the former first element of the deque, or [value] if this
+   * deque was empty.
+   */
+  fun popFrontOr(value: Float): Float {
+    if (size == 0)
+      return value
+
+    val c = container[realHead]
+
+    realHead = incremented(realHead)
+    size--
+
+    return c
+  }
+
+  /**
+   * Inline alias of [popFrontOr]
+   */
+  inline fun popFirstOr(value: Float) = popFrontOr(value)
 
   /**
    * Removes the first [n] elements of this deque.

@@ -1589,6 +1589,41 @@ abstract class AbstractULongDeque<D : AbstractULongDeque<D>> {
    */
   inline fun popLastOr(value: ULong) = popBackOr(value)
 
+  fun remove(index: Int) {
+    if (index == 0)
+      return removeFront(1)
+
+    if (index == size - 1)
+      return removeBack(1)
+
+    val removalIndex = vei(index)
+
+    // If we are closer to the head than the tail of the deque
+    if (index < size shr 1) {
+      if (removalIndex >= realHead) {
+        container.copyInto(container, realHead + 1, realHead, removalIndex)
+      } else {
+        container.copyInto(container, 1, 0, removalIndex)
+        container[0] = container[container.size - 1]
+        container.copyInto(container, realHead + 1, realHead, container.size - 1)
+      }
+
+      realHead = incremented(realHead)
+    } else {
+      val realTail = internalIndex(size - 1)
+
+      if (removalIndex <= realTail) {
+        container.copyInto(container, removalIndex, removalIndex + 1, realTail + 1)
+      } else {
+        container.copyInto(container, removalIndex, removalIndex + 1, container.size)
+        container[container.size - 1] = container[0]
+        container.copyInto(container, 0, 1, realTail + 1)
+      }
+    }
+
+    size--
+  }
+
   // endregion Data Removal
 
 
